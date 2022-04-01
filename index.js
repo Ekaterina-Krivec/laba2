@@ -57,14 +57,8 @@ const title = { // каким образом тут идет присвоени�
 }
 
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://kkk:<password>@cluster0.wgj4x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+
+
 
 
 // - - - - - CODE - - - - -
@@ -74,7 +68,7 @@ setDate();
 
 // - - - - - LISTENERS - - - - -
 
-buttonEllipsis.addEventListener('click', function () { // обрабатываем клики на три точки
+buttonEllipsis.addEventListener('click', function () { // обрабатываем клики на те самые три точки
 
     tasksFilters.classList.toggle('hidden'); //.toggle - позволяет отобразить или скрыть выбранные элементы.
 
@@ -217,13 +211,13 @@ function deleteTask(element) {
     updatePageTasks();
 }
 
-function setFilter(newFilter){ //?????????????????????????
+function setFilter(newFilter){ 
 
     filter = newFilter;
     updatePageTasks();
 }
 
-function setTitle() { //?????????????????????????
+function setTitle() { 
 
     const newTitle = title[filter];
     tasksTitle.textContent = newTitle;
